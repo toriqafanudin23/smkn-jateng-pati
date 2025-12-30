@@ -2,14 +2,15 @@ import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { 
-  Calendar, 
-  FileText, 
-  CheckCircle, 
-  Clock, 
-  Users, 
-  GraduationCap, 
-  Phone, 
+import PPDBRegistrationForm from "@/components/PPDBRegistrationForm";
+import {
+  Calendar,
+  FileText,
+  CheckCircle,
+  Clock,
+  Users,
+  GraduationCap,
+  Phone,
   Mail,
   ArrowRight,
   Download
@@ -18,37 +19,44 @@ import {
 const timeline = [
   {
     step: 1,
-    title: "Pendaftaran Online",
-    date: "1 Januari - 28 Februari 2025",
-    description: "Isi formulir pendaftaran online dan unggah dokumen yang diperlukan.",
+    title: "Verifikasi Administrasi",
+    date: "s/d 31 Januari 2025",
+    description: "Verifikasi kelengkapan dan keabsahan berkas pendaftaran.",
     status: "active",
   },
   {
     step: 2,
-    title: "Seleksi Administrasi",
-    date: "1 - 15 Maret 2025",
-    description: "Verifikasi kelengkapan dan keabsahan dokumen pendaftaran.",
+    title: "Tes Tertulis",
+    date: "15 Februari 2025",
+    description: "Ujian tertulis meliputi Matematika, IPA, dan Bahasa Inggris.",
     status: "upcoming",
   },
   {
     step: 3,
-    title: "Tes Seleksi",
-    date: "20 - 25 Maret 2025",
-    description: "Tes akademik, wawancara, dan tes kesehatan.",
+    title: "Tes Fisik",
+    date: "3 Maret 2025",
+    description: "Tes kebugaran jasmani: lari, push up, sit up, dan lainnya.",
     status: "upcoming",
   },
   {
     step: 4,
-    title: "Pengumuman",
-    date: "1 April 2025",
-    description: "Pengumuman hasil seleksi melalui website dan SMS.",
+    title: "Tes Kesehatan",
+    date: "3 Maret 2025",
+    description: "Pemeriksaan kesehatan: mata, urin, tinggi/berat badan, dan lainnya.",
     status: "upcoming",
   },
   {
     step: 5,
-    title: "Daftar Ulang",
-    date: "5 - 15 April 2025",
-    description: "Konfirmasi pendaftaran dan penyerahan dokumen asli.",
+    title: "Survey Rumah",
+    date: "20 - 30 Maret 2025",
+    description: "Survey kondisi tempat tinggal dan keluarga calon siswa.",
+    status: "upcoming",
+  },
+  {
+    step: 6,
+    title: "Pengumuman Lolos",
+    date: "7 April 2025",
+    description: "Pengumuman hasil seleksi akhir melalui website dan SMS.",
     status: "upcoming",
   },
 ];
@@ -88,7 +96,7 @@ const PPDB = () => {
 
       <div className="min-h-screen">
         <Navbar />
-        
+
         <main className="pt-20">
           {/* Hero Section */}
           <section className="py-20 bg-gradient-hero relative overflow-hidden">
@@ -109,9 +117,11 @@ const PPDB = () => {
                 Raih kesempatan pendidikan <span className="font-bold text-accent">100% GRATIS</span> di sekolah kejuruan unggulan dengan sistem boarding school
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="gold" size="xl" className="text-lg">
-                  <FileText className="w-5 h-5 mr-2" />
-                  Daftar Online
+                <Button variant="gold" size="xl" className="text-lg" asChild>
+                  <a href="#daftar">
+                    <FileText className="w-5 h-5 mr-2" />
+                    Daftar Online
+                  </a>
                 </Button>
                 <Button variant="heroOutline" size="xl" className="text-lg">
                   <Download className="w-5 h-5 mr-2" />
@@ -149,6 +159,22 @@ const PPDB = () => {
             </div>
           </section>
 
+          {/* Registration Form */}
+          <section id="daftar" className="py-16 bg-background">
+            <div className="container mx-auto px-4">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
+                Formulir <span className="text-primary">Pendaftaran Online</span>
+              </h2>
+              <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+                Lengkapi data diri dan upload berkas dalam format PDF (maksimal 5MB).
+                Pastikan semua dokumen sudah digabungkan menjadi 1 file.
+              </p>
+              <div className="max-w-3xl mx-auto bg-card rounded-xl shadow-card border border-border p-6 md:p-8">
+                <PPDBRegistrationForm />
+              </div>
+            </div>
+          </section>
+
           {/* Timeline */}
           <section className="py-16 bg-secondary">
             <div className="container mx-auto px-4">
@@ -160,17 +186,15 @@ const PPDB = () => {
                   {timeline.map((item, index) => (
                     <div
                       key={item.step}
-                      className={`flex gap-6 p-6 rounded-xl border-2 transition-all ${
-                        item.status === "active"
-                          ? "bg-primary/5 border-primary"
-                          : "bg-card border-border"
-                      }`}
+                      className={`flex gap-6 p-6 rounded-xl border-2 transition-all ${item.status === "active"
+                        ? "bg-primary/5 border-primary"
+                        : "bg-card border-border"
+                        }`}
                     >
-                      <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg ${
-                        item.status === "active"
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted text-muted-foreground"
-                      }`}>
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-lg ${item.status === "active"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted text-muted-foreground"
+                        }`}>
                         {item.step}
                       </div>
                       <div className="flex-1">

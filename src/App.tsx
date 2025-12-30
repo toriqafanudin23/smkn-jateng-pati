@@ -12,6 +12,7 @@ import GuruStaf from "./pages/GuruStaf";
 import PPDB from "./pages/PPDB";
 import Galeri from "./pages/Galeri";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/program-studi" element={<ProgramStudi />} />

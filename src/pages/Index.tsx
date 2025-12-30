@@ -24,7 +24,7 @@ const Index = () => {
       </Helmet>
 
       <div className="min-h-screen">
-        <Navbar />
+        <Navbar isHeroPage={true} />
         <main>
           <HeroSection />
           <GalleryCarousel />
