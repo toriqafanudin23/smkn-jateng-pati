@@ -152,7 +152,7 @@ const PPDBRegistrationForm = () => {
                         placeholder="Masukkan nama lengkap"
                         value={formData.namaLengkap}
                         onChange={(e) => handleInputChange("namaLengkap", e.target.value)}
-                        className={errors.namaLengkap ? "border-destructive" : ""}
+                        className={cn("h-11 md:h-10", errors.namaLengkap ? "border-destructive" : "")}
                     />
                     {errors.namaLengkap && (
                         <p className="text-destructive text-sm">{errors.namaLengkap}</p>
@@ -168,7 +168,7 @@ const PPDBRegistrationForm = () => {
                         value={formData.nisn}
                         onChange={(e) => handleInputChange("nisn", e.target.value)}
                         maxLength={10}
-                        className={errors.nisn ? "border-destructive" : ""}
+                        className={cn("h-11 md:h-10", errors.nisn ? "border-destructive" : "")}
                     />
                     {errors.nisn && (
                         <p className="text-destructive text-sm">{errors.nisn}</p>
@@ -183,7 +183,7 @@ const PPDBRegistrationForm = () => {
                         placeholder="Kota/Kabupaten kelahiran"
                         value={formData.tempatLahir}
                         onChange={(e) => handleInputChange("tempatLahir", e.target.value)}
-                        className={errors.tempatLahir ? "border-destructive" : ""}
+                        className={cn("h-11 md:h-10", errors.tempatLahir ? "border-destructive" : "")}
                     />
                     {errors.tempatLahir && (
                         <p className="text-destructive text-sm">{errors.tempatLahir}</p>
@@ -198,7 +198,7 @@ const PPDBRegistrationForm = () => {
                         type="date"
                         value={formData.tanggalLahir}
                         onChange={(e) => handleInputChange("tanggalLahir", e.target.value)}
-                        className={errors.tanggalLahir ? "border-destructive" : ""}
+                        className={cn("h-11 md:h-10", errors.tanggalLahir ? "border-destructive" : "")}
                     />
                     {errors.tanggalLahir && (
                         <p className="text-destructive text-sm">{errors.tanggalLahir}</p>
@@ -212,7 +212,7 @@ const PPDBRegistrationForm = () => {
                         value={formData.jenisKelamin}
                         onValueChange={(value) => handleInputChange("jenisKelamin", value)}
                     >
-                        <SelectTrigger className={errors.jenisKelamin ? "border-destructive" : ""}>
+                        <SelectTrigger className={cn("h-11 md:h-10", errors.jenisKelamin ? "border-destructive" : "")}>
                             <SelectValue placeholder="Pilih jenis kelamin" />
                         </SelectTrigger>
                         <SelectContent>
@@ -233,7 +233,7 @@ const PPDBRegistrationForm = () => {
                         placeholder="Nama sekolah asal"
                         value={formData.asalSekolah}
                         onChange={(e) => handleInputChange("asalSekolah", e.target.value)}
-                        className={errors.asalSekolah ? "border-destructive" : ""}
+                        className={cn("h-11 md:h-10", errors.asalSekolah ? "border-destructive" : "")}
                     />
                     {errors.asalSekolah && (
                         <p className="text-destructive text-sm">{errors.asalSekolah}</p>
@@ -248,7 +248,7 @@ const PPDBRegistrationForm = () => {
                         placeholder="Nama ayah/ibu/wali"
                         value={formData.namaOrangTua}
                         onChange={(e) => handleInputChange("namaOrangTua", e.target.value)}
-                        className={errors.namaOrangTua ? "border-destructive" : ""}
+                        className={cn("h-11 md:h-10", errors.namaOrangTua ? "border-destructive" : "")}
                     />
                     {errors.namaOrangTua && (
                         <p className="text-destructive text-sm">{errors.namaOrangTua}</p>
@@ -263,7 +263,7 @@ const PPDBRegistrationForm = () => {
                         placeholder="08xxxxxxxxxx"
                         value={formData.noHpOrangTua}
                         onChange={(e) => handleInputChange("noHpOrangTua", e.target.value)}
-                        className={errors.noHpOrangTua ? "border-destructive" : ""}
+                        className={cn("h-11 md:h-10", errors.noHpOrangTua ? "border-destructive" : "")}
                     />
                     {errors.noHpOrangTua && (
                         <p className="text-destructive text-sm">{errors.noHpOrangTua}</p>
@@ -277,7 +277,7 @@ const PPDBRegistrationForm = () => {
                         value={formData.pilihanJurusan}
                         onValueChange={(value) => handleInputChange("pilihanJurusan", value)}
                     >
-                        <SelectTrigger className={errors.pilihanJurusan ? "border-destructive" : ""}>
+                        <SelectTrigger className={cn("h-11 md:h-10", errors.pilihanJurusan ? "border-destructive" : "")}>
                             <SelectValue placeholder="Pilih program studi" />
                         </SelectTrigger>
                         <SelectContent>

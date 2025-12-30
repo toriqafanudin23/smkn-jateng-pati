@@ -51,18 +51,18 @@ const HeroSection = () => {
           </p>
 
           {/* Highlights */}
-          <div className="flex flex-wrap justify-center gap-6 mb-10 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
-            <div className="flex items-center gap-2 text-primary-foreground/90">
-              <BookOpen className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">Boarding School</span>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10 animate-fade-in-up" style={{ animationDelay: "0.8s" }}>
+            <div className="flex items-center gap-2 text-primary-foreground/90 bg-white/5 px-3 py-1.5 rounded-full backdrop-blur-sm sm:bg-transparent sm:p-0">
+              <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+              <span className="text-xs sm:text-sm font-medium">Boarding School</span>
             </div>
-            <div className="flex items-center gap-2 text-primary-foreground/90">
-              <Users className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">Semi Militer</span>
+            <div className="flex items-center gap-2 text-primary-foreground/90 bg-white/5 px-3 py-1.5 rounded-full backdrop-blur-sm sm:bg-transparent sm:p-0">
+              <Users className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+              <span className="text-xs sm:text-sm font-medium">Semi Militer</span>
             </div>
-            <div className="flex items-center gap-2 text-primary-foreground/90">
-              <Award className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">100% Gratis</span>
+            <div className="flex items-center gap-2 text-primary-foreground/90 bg-white/5 px-3 py-1.5 rounded-full backdrop-blur-sm sm:bg-transparent sm:p-0">
+              <Award className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
+              <span className="text-xs sm:text-sm font-medium">100% Gratis</span>
             </div>
           </div>
 

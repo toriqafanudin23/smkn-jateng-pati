@@ -140,9 +140,14 @@ const Footer = () => {
             <p className="text-primary-foreground/60 text-sm text-center md:text-left">
               © 2025 SMKN Jawa Tengah Pati. Hak Cipta Dilindungi.
             </p>
-            <p className="text-primary-foreground/60 text-sm">
-              <span className="text-accent font-semibold">Sang Juara</span> - Tiada Hari Tanpa Prestasi
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-4">
+              <p className="text-primary-foreground/60 text-sm">
+                <span className="text-accent font-semibold">Sang Juara</span> - Tiada Hari Tanpa Prestasi
+              </p>
+              <Link to="/admin/login" className="text-primary-foreground/40 text-xs hover:text-accent transition-colors">
+                Admin Login
+              </Link>
+            </div>
           </div>
         </div>
       </div>
